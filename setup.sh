@@ -6,6 +6,6 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 cd "$SCRIPT_DIR" && git submodule update --init
 
 sudo apt install -y stow
-stow -d "$SCRIPT_DIR" -t "$HOME"
+cd "$SCRIPT_DIR" && stow . && cd -
 
 nix-env -iA nixpkgs.devcontainer
