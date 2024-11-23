@@ -8,6 +8,8 @@
                 ripgrep
                 fzf
                 stow
+                tree
+                grc
             ];
         };
     };

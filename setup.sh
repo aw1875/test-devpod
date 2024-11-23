@@ -7,5 +7,6 @@ cd "$SCRIPT_DIR" && git submodule update --init
 
 sudo apt install -y stow
 cd "$SCRIPT_DIR" && stow . && cd -
+cp -r /temp/github-copilot ~/.config/github-copilot
 
 nix-env -iA nixpkgs.devcontainer
