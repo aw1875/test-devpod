@@ -11,4 +11,4 @@ ln -sf "$SCRIPT_DIR/config.nix" "$XDG_CONFIG_HOME/nixpkgs"
 
 nix-env -iA nixpkgs.devcontainer
 
-stow . && cd - && echo "Done!"
+stow -d "$SCRIPT_DIR" -t "$HOME"
