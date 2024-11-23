@@ -6,7 +6,6 @@ export PATH="/opt/swift/usr/bin:$PATH"
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 export PATH="$PATH:/usr/local/go/bin"
 export PATH="$HOME/.bun/bin:$PATH"
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # -----------------------------------
 # Bun
@@ -24,10 +23,5 @@ export VISUAL=nvim
 # Bat
 # -----------------------------------
 export BAT_THEME="OneHalfDark"
-
-# -----------------------------------
-# Nix
-# -----------------------------------
-source $HOME/.nix-profile/etc/profile.d/nix.sh
 
 # vim: set filetype=zsh :

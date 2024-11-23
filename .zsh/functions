@@ -61,16 +61,16 @@ nix_shell_info() {
 }
 
 ssh_info() {
-    [[ -n "$SSH_CONNECTION" || -n "$SSH_TTY" || -n "$SSH_CLIENT" ]] && echo "%{$fg[red]%}(ssh)%{$reset_color%} "
+    [[ -n "$SSH_CONNECTION" || -n "$SSH_TTY" || -n "$SSH_CLIENT" ]] && echo "%{$fg[red]%}(ssh)%{$reset_color%}   "
 }
 
 precmd() {
-    PROMPT="$(ssh_info)%B%{$fg[green]%}[wolfy] ▶ %{$fg[cyan]%}%c%{$reset_color%}$(virtualenv_info)$(nix_shell_info) "
+    PROMPT="$(ssh_info)%B%{$fg[green]%}[wolfy] ▶ %{$fg[cyan]%}%c%{$reset_color%}$(virtualenv_info)$(nix_shell_info)   "
 
     # Git Worktrees
     if [ "$(git rev-parse --is-bare-repository 2>/dev/null)" = "true" ]; then
         WORK_TREES=$(( $(git worktree list | wc -l) - 1 ))
-        RPROMPT="%{$bg[yellow]%}%{$fg_bold[black]%}  ${WORK_TREES} %{$reset_color%} "
+        RPROMPT="%{$bg[yellow]%}%{$fg_bold[black]%}  ${WORK_TREES} %{$reset_color%}   "
         return
     fi
     
